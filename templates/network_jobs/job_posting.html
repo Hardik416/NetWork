@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NetWork | Post a Job</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer2.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar2.css' %}">
+  <link rel="stylesheet" href="{% static 'css/job_posting.css' %}">
+  <style>
+    body {
+      background-color: #f3f2ef;
+      background-image: url('https://www.transparenttextures.com/patterns/connected.png');
+      background-repeat: repeat;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  {% include 'network_jobs/navbar2.html' %}
+
+  <!-- Main Content -->
+  <div class="main-container" style="padding-top: 5px; padding-bottom: 50px;">
+    <!-- Posting Section -->
+    <section class="posting-section">
+      <div class="posting-header">
+        <h1 class="posting-title">Post a Job</h1>
+        <p class="posting-description">Connect with the best talent by posting your job opening to thousands of qualified professionals on our network.</p>
+      </div>
+      
+      <div class="posting-container">
+        <div class="progress-bar">
+          <div class="progress-step active" id="step1Label">Job Details</div>
+          <div class="progress-step" id="step2Label">Requirements</div>
+          <div class="progress-step" id="step3Label">Company Info</div>
+        </div>
+        
+        <form id="jobPostingForm" class="form-steps">
+          <!-- Step 1: Job Details -->
+          <div class="form-step active" id="step1">
+            <h2 class="step-title">Job Details</h2>
+            <div class="form-group">
+              <label for="jobTitle" class="form-label">Job Title *</label>
+              <input type="text" id="jobTitle" class="form-input" name="title" placeholder="e.g. Senior Frontend Developer" required>
+            </div>
+            <div class="form-group">
+              <label for="jobType" class="form-label">Job Type *</label>
+              <select id="jobType" class="form-select" name="type" required>
+                <option value="">Select job type</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Contract">Contract</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Internship">Internship</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="workLocation" class="form-label">Work Location *</label>
+              <select id="workLocation" class="form-select" required>
+                <option value="">Select location type</option>
+                <option value="on-site">On-site</option>
+                <option value="remote">Remote</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="location" class="form-label">Location</label>
+              <input type="text" id="location" class="form-input" name="location" placeholder="e.g. New York, NY">
+              <small>(Leave blank if fully remote)</small>
+            </div>
+            <div class="form-group">
+              <label for="department" class="form-label">Department</label>
+              <input type="text" id="department" class="form-input" name="department" placeholder="e.g. Engineering, Marketing">
+            </div>
+            <div class="form-group">
+              <label for="minSalary" class="form-label">Salary Range (Annual)</label>
+              <input type="number" id="minSalary" class="form-input" name="salary" placeholder="Minimum Salary">
+            </div>
+            <div class="form-group">
+              <label for="maxSalary" class="form-label">&nbsp;</label>
+              <input type="number" id="maxSalary" class="form-input" name="maxSalary" placeholder="Maximum Salary">
+            </div>
+            <div class="form-group">
+              <label for="jobDescription" class="form-label">Job Description *</label>
+              <textarea id="jobDescription" class="form-textarea" name="description" placeholder="Describe the role, responsibilities, and ideal candidate..." required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-prev" id="btnBackToStep1">Previous</button>
+              <button type="button" class="btn-next" id="btnToStep2">Next: Requirements</button>
+            </div>
+          </div>
+          
+          <!-- Step 2: Requirements -->
+          <div class="form-step" id="step2">
+            <h2 class="step-title">Requirements & Qualifications</h2>
+            <div class="form-group">
+              <label for="requirements" class="form-label">Key Requirements *</label>
+              <textarea id="requirements" class="form-textarea" name="requirements" placeholder="List the key requirements for this position..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="qualifications" class="form-label">Qualifications *</label>
+              <textarea id="qualifications" class="form-textarea" name="qualifications" placeholder="Describe the qualifications and experience needed..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Skills & Expertise</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill1" name="skills" value="JavaScript">
+                  <label for="skill1">JavaScript</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill2" name="skills" value="React">
+                  <label for="skill2">React</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill3" name="skills" value="Python">
+                  <label for="skill3">Python</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill4" name="skills" value="Data Analysis">
+                  <label for="skill4">Data Analysis</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill5" name="skills" value="UI/UX Design">
+                  <label for="skill5">UI/UX Design</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill6" name="skills" value="Project Management">
+                  <label for="skill6">Project Management</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill7" name="skills" value="Digital Marketing">
+                  <label for="skill7">Digital Marketing</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="skill8" name="skills" value="SQL">
+                  <label for="skill8">SQL</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="experience" class="form-label">Experience Level *</label>
+              <select id="experience" class="form-select" name="experienceLevel" required>
+                <option value="">Select experience level</option>
+                <option value="Entry">Entry Level</option>
+                <option value="Mid">Mid Level</option>
+                <option value="Senior">Senior Level</option>
+                <option value="Expert">Expert (8+ years)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="education" class="form-label">Education Level</label>
+              <select id="education" class="form-select" name="education" required>
+                <option value="">Select education level</option>
+                <option value="High School">High School</option>
+                <option value="Associate">Associate Degree</option>
+                <option value="Bachelor's">Bachelor's Degree</option>
+                <option value="Master's">Master's Degree</option>
+                <option value="PhD">PhD</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="benefits" class="form-label">Benefits & Perks</label>
+              <textarea id="benefits" class="form-textarea" name="benefits" placeholder="List the benefits and perks offered with this position..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-prev" id="btnBackToStep1">Previous</button>
+              <button type="button" class="btn-next" id="btnToStep3">Next: Company Info</button>
+            </div>
+          </div>
+          
+          <!-- Step 3: Company Info -->
+          <div class="form-step" id="step3">
+            <h2 class="step-title">Company Information</h2>
+            <div class="form-group">
+              <label for="companyName" class="form-label">Company Name *</label>
+              <input type="text" id="companyName" class="form-input" name="company" required>
+            </div>
+            <div class="form-group">
+              <label for="companySize" class="form-label">Company Size</label>
+              <select id="companySize" class="form-select" name="companySize">
+                <option value="">Select company size</option>
+                <option value="1-10">1-10 employees</option>
+                <option value="11-50">11-50 employees</option>
+                <option value="51-200">51-200 employees</option>
+                <option value="201-500">201-500 employees</option>
+                <option value="501+">501+ employees</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="industry" class="form-label">Industry *</label>
+              <input type="text" id="industry" class="form-input" name="industry" required>
+            </div>
+            <div class="form-group">
+              <label for="companyWebsite" class="form-label">Company Website</label>
+              <input type="url" id="companyWebsite" class="form-input" name="website">
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-prev" id="btnBackToStep2">Previous</button>
+              <button type="submit" class="btn-submit">Post Job</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  {% include 'network_jobs/footer2.html' %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('jobPostingForm');
+      const steps = form.querySelectorAll('.form-step');
+      const progressSteps = document.querySelectorAll('.progress-step');
+      const nextButtons = form.querySelectorAll('.btn-next');
+      const prevButtons = form.querySelectorAll('.btn-prev');
+      let currentStep = 0;
+
+      // Next button click handler
+      nextButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (validateStep(currentStep)) {
+            steps[currentStep].classList.remove('active');
+            progressSteps[currentStep].classList.add('completed');
+            currentStep++;
+            steps[currentStep].classList.add('active');
+            progressSteps[currentStep].classList.add('active');
+          }
+        });
+      });
+
+      // Previous button click handler
+      prevButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          steps[currentStep].classList.remove('active');
+          progressSteps[currentStep].classList.remove('active');
+          currentStep--;
+          steps[currentStep].classList.add('active');
+          progressSteps[currentStep].classList.remove('completed');
+        });
+      });
+
+      // Form submission handler
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (validateStep(currentStep)) {
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+          
+          try {
+            const response = await fetch('/jobs/post/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+              },
+              body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            if (result.status === 'success') {
+              alert('Job posted successfully!');
+              window.location.href = '/jobs/';
+            } else {
+              alert('Error posting job: ' + result.message);
+            }
+          } catch (error) {
+            alert('Error posting job: ' + error.message);
+          }
+        }
+      });
+
+      // Validate current step
+      function validateStep(step) {
+        const currentStepElement = steps[step];
+        const requiredFields = currentStepElement.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('error');
+          } else {
+            field.classList.remove('error');
+          }
+        });
+
+        return isValid;
+      }
+
+      // Get CSRF token from cookies
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+    });
+  </script>
+</body>
+</html>

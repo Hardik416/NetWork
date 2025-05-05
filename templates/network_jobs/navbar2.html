@@ -1,0 +1,16 @@
+<header id="mainHeader">
+    <a href="{% url 'login_register' %}" class="logo">NetWork</a>
+    <nav class="nav-links">
+        <a href="{% url 'login_register' %}" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Profile</a>
+        <a href="#" class="nav-link">Network</a>
+        <div class="dropdown">
+            <a href="#" class="nav-link active">Jobs</a>
+            <div class="dropdown-content">
+                <a href="{% url 'job_searching' %}" class="dropdown-item">Search Jobs</a>
+                <a href="{% url 'job_posting' %}" class="dropdown-item">Post a Job</a>
+            </div>
+        </div>
+        <a href="#" class="nav-link">Messages</a>
+    </nav>
+</header>

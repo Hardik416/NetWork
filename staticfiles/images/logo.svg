@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="20" cy="20" r="18" fill="#0077B5"/>
+    
+    <!-- Network Icon -->
+    <path d="M20 8C13.373 8 8 13.373 8 20C8 26.627 13.373 32 20 32C26.627 32 32 26.627 32 20C32 13.373 26.627 8 20 8ZM20 30C14.477 30 10 25.523 10 20C10 14.477 14.477 10 20 10C25.523 10 30 14.477 30 20C30 25.523 25.523 30 20 30Z" fill="white"/>
+    <path d="M20 14C16.686 14 14 16.686 14 20C14 23.314 16.686 26 20 26C23.314 26 26 23.314 26 20C26 16.686 23.314 14 20 14ZM20 24C17.791 24 16 22.209 16 20C16 17.791 17.791 16 20 16C22.209 16 24 17.791 24 20C24 22.209 22.209 24 20 24Z" fill="white"/>
+    <circle cx="20" cy="20" r="2" fill="white"/>
+    
+    <!-- Text -->
+    <text x="45" y="25" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#0077B5">NetWork</text>
+</svg> 

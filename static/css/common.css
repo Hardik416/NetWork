@@ -1,0 +1,125 @@
+/* :root {
+  --primary-color: #0077b5;
+  --primary-dark: #005582;
+  --primary-light: #00a0dc;
+  --secondary-color: #fff;
+} */
+
+  :root {
+    --footer-bg: #0077b5;
+    --text-light: #fff;
+    --text-white: rgba(255, 255, 255, 0.7);
+    --hover-color: #fff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --transition: all 0.3s ease;
+}
+
+.footer2 {
+    background: var(--footer-bg) !important;
+    color: var(--text-light);
+    padding: 60px 0 20px;
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-section p {
+    color: var(--text-white);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-link {
+    color: var(--text-white);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.footer-link:hover {
+    color: var(--hover-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    color: var(--text-white);
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    color: var(--text-white);
+    font-size: 14px;
+}
+
+.language-selector select {
+    background: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.language-selector select:hover {
+    border-color: var(--hover-color);
+}
+
+.language-selector select option {
+    background: var(--footer-bg);
+    color: var(--text-light);
+}
+
+
+  

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetWork | Premium Career Platform</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/p2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/p2-1.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+        .page-container {
+            flex: 1;
+        }
+        .light-section {
+            padding: 80px 0;
+            background-color: #f3f2ef;
+            background-image: url('https://www.transparenttextures.com/patterns/connected.png');
+            background-repeat: repeat;
+        }
+        .section-container {
+            margin: 60px 0;
+        }
+        .section-container:first-child {
+            margin-top: 0;
+        }
+        .section-container:last-child {
+            margin-bottom: 0;
+        }
+        .promo-banner {
+            margin: 40px 0;
+        }
+        /* Navbar Styles */
+        #mainHeader {
+            padding: 15px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, color 0.3s;
+        }
+        .logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-link:hover {
+            color: #fff;
+        }
+        .nav-link.active {
+            color: #fff;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-item {
+            color: #999;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        .dropdown-item:hover {
+            color: #fff;
+        }
+        .logo2 {
+            width: auto;
+            height: 100px;
+        }
+        .logo3 {
+            width: auto;
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header id="mainHeader">
+        <a href="{% url 'login_register' %}" class="logo">NetWork</a>
+        <nav class="nav-links">
+            <a href="{% url 'login_register' %}" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Profile</a>
+            <a href="#" class="nav-link">Network</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link active">Jobs</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'job_searching' %}" class="dropdown-item">Search Jobs</a>
+                    <a href="{% url 'job_posting' %}" class="dropdown-item">Post a Job</a>
+                </div>
+            </div>
+            <a href="#" class="nav-link">Messages</a>
+        </nav>
+    </header>
+
+
+    <div class="page-container" id="pageContainer">
+        <!-- Dark Section -->
+        <section id="darkSection" class="dark-section">
+            <div class="main-content">
+                <div class="header-content">
+                    <h1>Find your dream job now!</h1>
+                    <p class="subtitle">Top Companies</p>
+                </div>
+                
+                <div class="slider">
+                    <!-- <button class="slider--btn slider--btn__prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6" />
+                        </svg>
+                    </button> -->
+
+                    <div class="slides__wrapper">
+                        <div class="slides">
+                            <!-- slide 1 -->
+                            <div class="slide" data-current>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/microsoft.png' %}" alt="Microsoft" class="logo2" >
+                                    <h3 class="company-name">Microsoft</h3>
+                                    <p class="company-industry">Technology · Software</p>
+                                    <span class="open-positions">24 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 2 -->
+                            <div class="slide" data-next>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/apple2.png' %}" alt="Apple" class="logo2">
+                                    <h3 class="company-name">Apple</h3>
+                                    <p class="company-industry">Technology · Hardware</p>
+                                    <span class="open-positions">17 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 3 -->
+                            <div class="slide" data-next-2>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/google.png' %}" alt="Google" class="logo2">
+                                    <h3 class="company-name">Google</h3>
+                                    <p class="company-industry">Technology · Services</p>
+                                    <span class="open-positions">31 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 4 -->
+                            <div class="slide" data-next-3>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/amazon2.png' %}" alt="Amazon" class="logo2">
+                                    <h3 class="company-name">Amazon</h3>
+                                    <p class="company-industry">E-commerce · Cloud</p>
+                                    <span class="open-positions">42 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 5 -->
+                            <div class="slide" data-previous>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/netflix.png' %}" alt="Netflix" class="logo2">
+                                    <h3 class="company-name">Netflix</h3>
+                                    <p class="company-industry">Entertainment · Streaming</p>
+                                    <span class="open-positions">9 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 6 -->
+                            <div class="slide" data-previous-2>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/meta.png' %}" alt="Meta" class="logo2">
+                                    <h3 class="company-name">Meta</h3>
+                                    <p class="company-industry">Social Media · Tech</p>
+                                    <span class="open-positions">15 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 7 -->
+                            <div class="slide" data-previous-3>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/tesla.png' %}" alt="Tesla" class="logo2">
+                                    <h3 class="company-name">Tesla</h3>
+                                    <p class="company-industry">Automotive · Energy</p>
+                                    <span class="open-positions">28 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 8 -->
+                            <div class="slide" data-next-4>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/ibm.png' %}" alt="IBM" class="logo2">
+                                    <h3 class="company-name">IBM</h3>
+                                    <p class="company-industry">Technology · Services</p>
+                                    <span class="open-positions">19 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 9 -->
+                            <div class="slide" data-previous-4>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/samsung.png' %}" alt="Samsung" class="logo2">
+                                    <h3 class="company-name">Samsung</h3>
+                                    <p class="company-industry">Electronics · Tech</p>
+                                    <span class="open-positions">23 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 10 -->
+                            <div class="slide" data-next-5>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" class="logo2">
+                                    <h3 class="company-name">LinkedIn</h3>
+                                    <p class="company-industry">Social · Professional</p>
+                                    <span class="open-positions">12 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 11 -->
+                            <div class="slide" data-previous-5>
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/adobe2.png' %}" alt="Adobe" class="logo2">
+                                    <h3 class="company-name">Adobe</h3>
+                                    <p class="company-industry">Software · Creative</p>
+                                    <span class="open-positions">16 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+
+                            <!-- slide 12 -->
+                            <div class="slide">
+                                <div class="slide__inner">
+                                    <img src="{% static 'images/salesforce.png' %}" alt="Salesforce" class="logo2">
+                                    <h3 class="company-name">Salesforce</h3>
+                                    <p class="company-industry">CRM · Cloud</p>
+                                    <span class="open-positions">21 Open Positions</span>
+                                    <button class="apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <button class="slider--btn slider--btn__next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </button> -->
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator" id="scrollIndicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                </svg>
+                <span>Scroll down</span>
+            </div>
+        </section>
+        
+        <!-- Light Section -->
+
+        <section id="lightSection" class="light-section">
+            <div class="section-container">
+                <!-- The base image -->
+                <img src="{% static 'images/banner2.png' %}" alt="Discover jobs across popular roles" class="base-image">
+                
+                <!-- Job search div that overlays on the white part -->
+                <div class="job-search-div">
+                    <form action="{% url 'job_list' %}" method="GET" class="search-form">
+                        <!-- Role selection dropdown (kept intact) -->
+                        <select name="role" class="search-input">
+                            <option value="">Select a role</option>
+                            <option value="developer">Software Developer</option>
+                            <option value="designer">UI/UX Designer</option>
+                            <option value="marketing">Marketing Specialist</option>
+                            <option value="sales">Sales Representative</option>
+                            <option value="finance">Finance Analyst</option>
+                            <option value="hr">Human Resources</option>
+                            <option value="project-manager">Project Manager</option>
+                            <option value="data-scientist">Data Scientist</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="admin">Administrative Assistant</option>
+                        </select>
+                        
+                        <!-- Added location input -->
+                        <div class="location-input">
+                            <input type="text" name="location" class="search-input" placeholder="Location (city, state, or remote)">
+                            <span class="location-icon">📍</span>
+                        </div>
+                        
+                        <!-- Added experience level selection -->
+                        <select name="experience" class="search-input">
+                            <option value="">Experience level</option>
+                            <option value="entry">Entry Level</option>
+                            <option value="mid">Mid Level</option>
+                            <option value="senior">Senior Level</option>
+                            <option value="executive">Executive</option>
+                        </select>
+                        
+                        <!-- Added job type filter options -->
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="full-time" name="job_type" value="full-time">
+                                <label for="full-time">Full-time</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="part-time" name="job_type" value="part-time">
+                                <label for="part-time">Part-time</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="contract" name="job_type" value="contract">
+                                <label for="contract">Contract</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="remote" name="job_type" value="remote">
+                                <label for="remote">Remote</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="search-button">Find Jobs</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <img src="{% static 'images/banner3.png' %}" alt="" class="promo-banner">
+            </div>
+        
+            <div class="section-container">
+                <!-- The base image -->
+                <img src="{% static 'images/banner5.png' %}" alt="Discover jobs across popular roles" class="base-image">
+        
+                <!-- Interview section container - Fixed -->
+                <div class="interview-section-container">
+                    <!-- Center section - Interview by company -->
+                    <div class="center-section">
+                        <h3 class="section-heading">Interview questions by company</h3>
+                        
+                        <div class="grid-container">
+                            <!-- Flipkart -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="company-card">
+                                <img src="{% static 'images/meta.png' %}" alt="" class="logo3">
+                                <div class="company-info">
+                                    <div class="company-name">Meta</div>
+                                    <div class="interview-count">488 Interviews</div>
+                                </div>
+                                <span class="arrow-icon">›</span>
+                            </a>
+                            
+                            <!-- Byjus -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="company-card">
+                                <img src="{% static 'images/adobe2.png' %}" alt="" class="logo3">
+                                <div class="company-info">
+                                    <div class="company-name">Adobe</div>
+                                    <div class="interview-count">816 Interviews</div>
+                                </div>
+                                <span class="arrow-icon">›</span>
+                            </a>
+                            
+                            <!-- Accenture -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="company-card">
+                                <img src="{% static 'images/apple.png' %}" alt="Accenture Logo" class="logo3">
+                                <div class="company-info">
+                                    <div class="company-name">Apple</div>
+                                    <div class="interview-count">2K+ Interviews</div>
+                                </div>
+                                <span class="arrow-icon">›</span>
+                            </a>
+                            
+                            <!-- TCS -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="company-card">
+                                <img src="{% static 'images/netflix.png' %}" alt="TCS Logo" class="logo3">
+                                <div class="company-info">
+                                    <div class="company-name">Netflix</div>
+                                    <div class="interview-count">2.5K+ Interviews</div>
+                                </div>
+                                <span class="arrow-icon">›</span>
+                            </a>
+                            
+                            <!-- Cognizant -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="company-card">
+                                <img src="{% static 'images/tesla.png' %}" alt="Cognizant Logo" class="logo3">
+                                <div class="company-info">
+                                    <div class="company-name">Tesla</div>
+                                    <div class="interview-count">1.6K+ Interviews</div>
+                                </div>
+                                <span class="arrow-icon">›</span>
+                            </a>
+                            
+                            <!-- Amazon -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="company-card">
+                                <img src="{% static 'images/amazon2.png' %}" alt="Amazon Logo" class="logo3">
+                                <div class="company-info">
+                                    <div class="company-name">Amazon</div>
+                                    <div class="interview-count">1.7K+ Interviews</div>
+                                </div>
+                                <span class="arrow-icon">›</span>
+                            </a>
+                        </div>
+                        
+                        <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="view-all">
+                            View all companies <span class="view-all-icon">›</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Right section - Interview by role -->
+                    <div class="right-section">
+                        <h3 class="section-heading">Interview questions by role</h3>
+                        
+                        <div class="role-list">
+                            <!-- Software Engineer -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="role-item">
+                                <div class="role-name">Software Engineer</div>
+                                <div class="question-count">(7.2K+ questions)</div>
+                            </a>
+                            
+                            <!-- Business Analyst -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="role-item">
+                                <div class="role-name">Business Analyst</div>
+                                <div class="question-count">(2.8K+ questions)</div>
+                            </a>
+                            
+                            <!-- Consultant -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="role-item">
+                                <div class="role-name">Consultant</div>
+                                <div class="question-count">(2.4K+ questions)</div>
+                            </a>
+                            
+                            <!-- Financial Analyst -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="role-item">
+                                <div class="role-name">Financial Analyst</div>
+                                <div class="question-count">(894 questions)</div>
+                            </a>
+                            
+                            <!-- Sales & Marketing -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="role-item">
+                                <div class="role-name">Sales & Marketing</div>
+                                <div class="question-count">(991 questions)</div>
+                            </a>
+                            
+                            <!-- Quality Engineer -->
+                            <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="role-item">
+                                <div class="role-name">Quality Engineer</div>
+                                <div class="question-count">(1.3K+ questions)</div>
+                            </a>
+                        </div>
+                        
+                        <a href="https://www.ambitionbox.com/interviews?utm_source=naukri&utm_medium=desktop&utm_campaign=nonlogged_homepage" class="view-all">
+                            View all roles <span class="view-all-icon">›</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {% include 'network_jobs/footer2.html' %}
+    <script src="{% static 'js/job_searching.js' %}"></script>
+</body>
+</html>
+    

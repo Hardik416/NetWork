@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Container for the whole section */
+.section-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+    overflow: visible;
+}
+
+/* Base image styling */
+.base-image {
+    width: 100%;
+    display: block;
+}
+
+/* Promo banner styling */
+.promo-banner {
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+}
+
+/* Job search div that will overlay on the white part */
+.job-search-div {
+    position: absolute;
+    right: 5%; /* Position from right */
+    width: 40%; /* Width of the job search div */
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* The following makes it overflow from top and bottom */
+    top: -40px; /* Negative value to overflow from top */
+    bottom: -40px; /* Extends beyond the bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Interview section container - Maintaining original position and width */
+.interview-section-container {
+    position: absolute;
+    right: 1%; /* Keeping original position */
+    width: 72%; /* Keeping original width */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    top: -40px; 
+    bottom: -40px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px; /* Added padding but smaller */
+}
+
+/* Center section - Interview by company */
+.center-section {
+    width: 46%; /* Made smaller to fit in original container */
+    padding-right: 15px; /* Reduced padding */
+    border-right: 1px solid #eee;
+}
+
+/* Right section - Interview by role */
+.right-section {
+    width: 46%; /* Made smaller to fit in original container */
+    padding-left: 15px; /* Reduced padding */
+}
+
+/* Section headings */
+.section-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Company/Role grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px; /* Reduced gap */
+}
+
+/* Company card */
+.company-card {
+    display: flex;
+    align-items: center;
+    padding: 12px; /* Reduced padding */
+    border: 1px solid #eee;
+    border-radius: 8px; /* Slightly smaller border radius */
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.company-card:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo3 {
+    width: 200px; /* Smaller logo */
+    height: 200px; /* Smaller logo */
+    margin-right: 10px; /* Less margin */
+    object-fit: contain;
+}
+
+.company-info {
+    flex-grow: 1;
+}
+
+.company-name {
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.interview-count {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Arrow icon */
+.arrow-icon {
+    color: #999;
+}
+
+/* Role list */
+.role-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap */
+}
+
+.role-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0; /* Reduced padding */
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: inherit;
+}
+
+.role-item:last-child {
+    border-bottom: none;
+}
+
+.role-name {
+    font-weight: bold;
+    color: #222;
+}
+
+.question-count {
+    color: #666;
+}
+
+/* View all button */
+.view-all {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    color: #1967d2;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.view-all-icon {
+    margin-left: 5px;
+}
+
+/* Search form elements */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.search-input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.search-button {
+    background-color: #ff4500; /* Same color as in the image */
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #e53e00;
+}
+
+/* Checkbox styles */
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.filter-option input {
+    margin-right: 5px;
+}
+
+.filter-option label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Location input */
+.location-input {
+    position: relative;
+}
+
+.location-icon {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    color: #777;
+}
